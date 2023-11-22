@@ -184,5 +184,46 @@ echo "\n" . round($balls[4]);
 
 echo "\n" . rand(1, 10);
 
+// conditionals
+function whatRelation($num) {
+  if ($num === 100) {
+    print "identical twins";
+  }
+  elseif ($num >= 35) {
+    print "parent and child or full siblings";
+  }
+  elseif ($num >= 14) {
+    print "grandparent and grandchild, aunt/uncle and niece/nephew, or half siblings";
+  }
+  elseif ($num >= 6) {
+    print "first cousins";
+  }
+  elseif ($num >= 3) {
+    print "second cousins";
+  }
+  elseif ($num >= 1) {
+    print "third cousins";
+  }
+  elseif ($num === 0) {
+    print "not genetically related";
+  }
+}
+
+whatRelation(12);
+whatRelation(55);
+whatRelation(100);
+whatRelation(0);
+whatRelation(29);
+
+function agreeOrDisagree($str1, $str2) {
+  return $str1 === $str2 ? "You agree!" : "You disagree!";
+};
+
+echo agreeOrDisagree("hi", "bye");
+echo agreeOrDisagree("hi", "hi");
+
+
+
+
 
 ?>
