@@ -185,6 +185,7 @@ echo "\n" . round($balls[4]);
 echo "\n" . rand(1, 10);
 
 // conditionals
+// if or elseif... notice the difference from JS. elseif is one word like typeof
 function whatRelation($num) {
   if ($num === 100) {
     print "identical twins";
@@ -210,11 +211,9 @@ function whatRelation($num) {
 }
 
 whatRelation(12);
-whatRelation(55);
-whatRelation(100);
-whatRelation(0);
 whatRelation(29);
 
+// ternary
 function agreeOrDisagree($str1, $str2) {
   return $str1 === $str2 ? "You agree!" : "You disagree!";
 };
@@ -222,8 +221,63 @@ function agreeOrDisagree($str1, $str2) {
 echo agreeOrDisagree("hi", "bye");
 echo agreeOrDisagree("hi", "hi");
 
+// standard switch
+function airQuality($string) {
+  switch ($string) {
+    case "green":
+      print "good";
+      break;
+    case "yellow":
+      print "moderate";
+      break;
+    case "orange":
+      print "unhealthy for sensitive groups";
+      break;
+    case "red":
+      print "unhealthy";
+      break;
+    case "purple":
+      print "very unhealthy";
+      break;
+    case "maroon":
+      print "hazardous";
+      break;
+      default:
+        print "invalid color";
+  }
+}
 
+airQuality("green");
+airQuality("maroon");
+airQuality("red");
 
+// multiple shared case switch
+function returnSeason($month) {
+  switch ($month) {
+    case "December":
+    case "January":
+    case "February":
+      return "winter";
+    case "March":
+    case "April":
+    case "May":
+      return "spring";
+    case "June":
+    case "July":
+    case "August":
+      return "summer";
+    case "September":
+    case "October":
+    case "November":
+      return "fall";
+  }
+}
 
+function getUserInputFromTerminal() {
+  echo "How's your day going?";
+  $response = readline(">> ");
+  echo "Weeeeellllllllll {$response}... isn't that just life.";
+}
 
+getUserInputFromTerminal();
 ?>
